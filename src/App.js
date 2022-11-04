@@ -10,8 +10,8 @@ function App() {
 
   useEffect(() => {
     getAllData().then(result=>{;
-    console.log('data',result.data)
-    setData(result.data.emps)
+    console.log('data',result)
+    setData(result.data.map(d=>d.name))
     }).catch(e=>{
       console.log('Error',e)
     })
@@ -19,11 +19,11 @@ function App() {
 
   function onSubmit(data){
     console.log('submitting',data)
-    postData(data).then(d=>{
+    postData({val:data}).then(d=>{
       console.log('Added data',d)
       setData(prev=>{
         console.log('prev',prev)
-        return [...prev, d.data.emp]
+        return [...prev, data]
       })
     })
   }
@@ -37,16 +37,13 @@ function App() {
           <thead>
             <tr>
               <th>
-                Id
-              </th>
-              <th>
                 Name
               </th>
             </tr>
           </thead>
           <tbody>
-            { data?.map(d=>{
-              return <tr key={`id${d.id}`}><td>{d.id}</td><td>{d.name}</td></tr> 
+            { data?.map((d,i)=>{
+              return <tr key={`id${i}`}><td>{d}</td></tr> 
               }) 
             }
           </tbody>
