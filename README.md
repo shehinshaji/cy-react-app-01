@@ -6,4 +6,4 @@ Please follow the steps given in the hands-on lab to use this application. Each 
 
 | Branch    | hands-on lab                                                  |
 | ----------| ------------------------------------------------------------- |
-| main      | [MERN Stack on K8s](https://cloudyuga.guru/hands_on_lab/mern) |
+| main      | [MERN Stack on Docker](https://cloudyuga.guru/hands_on_lab/mern-docker) |
